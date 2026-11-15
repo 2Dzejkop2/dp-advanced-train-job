@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1920x1080 Background Web</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+<div id="app">
+  <div class="app-surface avatar-stack">
+    <img class="glow" src="assets/glow.svg" alt="" aria-hidden="true" />
+    <div class="player-header-panel" aria-hidden="true"></div>
+    <div class="company-header-panel" aria-hidden="true"></div>
+    <img class="avatar-back" src="assets/avatar.png" alt="" aria-hidden="true" />
+    <img class="avatar-front" src="assets/avatar.png" alt="Avatar" />
+    <div id="playerName" class="playername">TRAIN DRIVER</div>
+    <div id="playerRank" class="playerrank">TRAINEE</div>
+    <div id="rankBar" class="rankbar" data-filled="2" data-progress="0" aria-label="Rank progress">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div id="xpText" class="rankbar-percent">0.00%</div>
+    <div class="company-glow" aria-hidden="true">RAIL COMPANY</div>
+    <div class="company-title"><span id="companyTitleMain">RAIL</span> <span id="companyTitleSub">COMPANY</span></div>
+    <div class="profile-icon" aria-hidden="true">
+      <div id="buyLicenseTitle" class="buy-license">BUY LICENSE</div>
+      <div id="buyLicenseHint" class="buy-license-hint">You need to get a license for every level you qualify for. If you don't get the proper license, there's a chance you might get fined.</div>
+      <img class="profile-icon-img" src="assets/profile-icon.svg" alt="" />
+    </div>
+    <div class="top-actions">
+      <button id="questsBtn" class="quests-button" type="button">QUESTS</button>
+    </div>
+    <div id="companyDesc" class="company-desc">From rookie to veteran a full metro driver life you can actually retire from.</div>
+    <img class="divider-line" src="assets/divider-line.svg" alt="" aria-hidden="true" />
+    <div class="xp">
+      <span id="xpLabel" class="xp-label">XP</span>
+      <span id="playerXp" class="xp-value">0</span>
+    </div>
+    <div id="licenseTabs" class="ranks">
+      <div class="rank-item rank-item--active">TRAINEE</div>
+      <div class="rank-item rank-item--locked">JUNIOR</div>
+      <div class="rank-item rank-item--locked">SENIOR</div>
+      <div class="rank-item rank-item--locked">CHIEF</div>
+    </div>
+    <div class="rank-card rank-card--1" data-rank-card="0" data-state="open">
+      <img class="rank-card-img" src="assets/openned-rank.png" alt="" aria-hidden="true" />
+      <div class="rank-card-content" aria-hidden="true">
+        <div class="rank-card-state">ACTIVE</div>
+        <div class="rank-card-unlock">
+          <div class="rank-card-unlock-head">
+            <span class="rank-card-unlock-label">UNLOCK PROGRESS</span>
+            <span class="rank-card-unlock-value">0%</span>
+          </div>
+          <div class="rank-card-unlock-bar"><span class="rank-card-unlock-fill"></span></div>
+        </div>
+        <div class="rank-card-title">TRAINEE</div>
+        <div class="rank-card-desc">Entry-level certification for new metro operators.</div>
+        <div class="rank-card-avatar-slot" aria-hidden="true">
+          <img class="rank-card-avatar" src="assets/traineeavatar.svg" alt="" />
+        </div>
+        <div class="rank-card-metrics">
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">STATION EARNING</div>
+            <div class="rank-card-metric-value">125$</div>
+          </div>
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">ROUTE BONUS</div>
+            <div class="rank-card-metric-value">1500$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card rank-card--2" data-rank-card="1" data-state="closed">
+      <img class="rank-card-img" src="assets/closed-rank2.png" alt="" aria-hidden="true" />
+      <div class="rank-card-content" aria-hidden="true">
+        <div class="rank-card-state">LOCKED</div>
+        <div class="rank-card-unlock">
+          <div class="rank-card-unlock-head">
+            <span class="rank-card-unlock-label">UNLOCK PROGRESS</span>
+            <span class="rank-card-unlock-value">0%</span>
+          </div>
+          <div class="rank-card-unlock-bar"><span class="rank-card-unlock-fill"></span></div>
+        </div>
+        <div class="rank-card-title">JUNIOR</div>
+        <div class="rank-card-desc">
+          Certified operator with improved route mastery and upgraded responsibilities. Requires completing 60 trips to progress. Players at this level receive a higher salary and unlock more advanced metro routes. After meeting the requirement, the Senior certification must be purchased to move to the next rank.
+        </div>
+        <div class="rank-card-avatar-slot" aria-hidden="true">
+          <img class="rank-card-avatar" src="assets/junioravatar.svg" alt="" />
+        </div>
+        <div class="rank-card-metrics">
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">STATION EARNING</div>
+            <div class="rank-card-metric-value rank-card-metric-value--locked">125$</div>
+          </div>
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">ROUTE BONUS</div>
+            <div class="rank-card-metric-value rank-card-metric-value--locked">1500$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card rank-card--3" data-rank-card="2" data-state="closed">
+      <img class="rank-card-img" src="assets/closed-rank3.png" alt="" aria-hidden="true" />
+      <div class="rank-card-content" aria-hidden="true">
+        <div class="rank-card-state">LOCKED</div>
+        <div class="rank-card-unlock">
+          <div class="rank-card-unlock-head">
+            <span class="rank-card-unlock-label">UNLOCK PROGRESS</span>
+            <span class="rank-card-unlock-value">0%</span>
+          </div>
+          <div class="rank-card-unlock-bar"><span class="rank-card-unlock-fill"></span></div>
+        </div>
+        <div class="rank-card-title">SENIOR</div>
+        <div class="rank-card-desc">
+          Experienced operator trusted with high-traffic routes and complex operations. Requires 150 trips to advance. Senior Operators earn an increased salary bonus and gain access to exclusive route types. After completing the required trips, players can buy the Chief Metro certification to reach the final rank.
+        </div>
+        <div class="rank-card-avatar-slot" aria-hidden="true">
+          <img class="rank-card-avatar" src="assets/senioravatar.svg" alt="" />
+        </div>
+        <div class="rank-card-metrics">
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">STATION EARNING</div>
+            <div class="rank-card-metric-value rank-card-metric-value--locked">125$</div>
+          </div>
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">ROUTE BONUS</div>
+            <div class="rank-card-metric-value rank-card-metric-value--locked">1500$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-card rank-card--4" data-rank-card="3" data-state="closed">
+      <img class="rank-card-img" src="assets/closed-rank4.png" alt="" aria-hidden="true" />
+      <div class="rank-card-content" aria-hidden="true">
+        <div class="rank-card-state">LOCKED</div>
+        <div class="rank-card-unlock">
+          <div class="rank-card-unlock-head">
+            <span class="rank-card-unlock-label">UNLOCK PROGRESS</span>
+            <span class="rank-card-unlock-value">0%</span>
+          </div>
+          <div class="rank-card-unlock-bar"><span class="rank-card-unlock-fill"></span></div>
+        </div>
+        <div class="rank-card-title">CHIEF</div>
+        <div class="rank-card-desc">
+          Top-tier metro operator with full responsibility over all routes and systems. Requires completing 300 trips to master all operations. This rank provides the highest salary, priority access to special missions, and full operational privileges. Represents the peak of metro progression.
+        </div>
+        <div class="rank-card-avatar-slot" aria-hidden="true">
+          <img class="rank-card-avatar" src="assets/chiefavatar.svg" alt="" />
+        </div>
+        <div class="rank-card-metrics">
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">STATION EARNING</div>
+            <div class="rank-card-metric-value rank-card-metric-value--locked">125$</div>
+          </div>
+          <div class="rank-card-metric">
+            <div class="rank-card-metric-label">ROUTE BONUS</div>
+            <div class="rank-card-metric-value rank-card-metric-value--locked">1500$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-buttons" aria-hidden="true" id="rankButtons">
+      <button class="rank-button rank-button--active" data-rank-button="0" type="button">Start Trainee</button>
+      <button class="rank-button rank-button--muted" data-rank-button="1" type="button">Start Junior</button>
+      <button class="rank-button rank-button--muted" data-rank-button="2" type="button">Start Senior</button>
+      <button class="rank-button rank-button--muted" data-rank-button="3" type="button">Start Chief</button>
+    </div>
+
+    <div class="trainer-modal is-hidden" id="paymentModal" aria-hidden="true">
+      <div class="trainer-modal__backdrop" data-close="modal" aria-hidden="true"></div>
+      <div class="trainer-modal__panel" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle">
+        <div class="trainer-modal__title" id="paymentModalTitle">
+          <img class="trainer-modal__title-icon" src="assets/profile-icon.svg" alt="" />
+          <span id="paymentModalHeader">BUY LICENSE</span>
+        </div>
+        <div class="trainer-modal__desc" id="paymentText">
+          This license is a one-time purchase. Will be registered under your name. How would you like to make the <span class="trainer-modal__amount">$0</span> payment?
+        </div>
+        <div class="trainer-modal__options">
+          <button id="payCash" class="trainer-modal__option" type="button">CASH</button>
+          <button id="payBank" class="trainer-modal__option trainer-modal__option--active" type="button">BANK</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="quests-modal is-hidden" id="questModal" aria-hidden="true">
+      <div class="quests-modal__backdrop" data-close="modal" aria-hidden="true"></div>
+      <div class="quests-modal__panel" role="dialog" aria-modal="true" aria-labelledby="questModalTitle">
+        <div class="quests-modal__header">
+          <div class="quests-modal__title" id="questModalTitle">QUEST LIST</div>
+          <button id="closeQuest" class="quests-modal__close" type="button" data-close="modal" aria-label="Close">&#10005;</button>
+        </div>
+        <div class="quests-modal__subtitle" id="questModalSubtitle">Complete tasks to claim rewards.</div>
+        <div id="questList" class="quests-modal__list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="builtInTextUI" class="builtin-textui is-hidden" style="display:none;">
+  <span id="builtInTextUIKey" class="builtin-textui__key">[E]</span>
+  <span id="builtInTextUIText" class="builtin-textui__text">Interact</span>
+</div>
+
+<div id="hudEditBar" class="hud-editbar is-hidden">
+  <div class="hud-editbar__toprow">
+    <button id="hudEditClose" class="hud-editbar__button" type="button">Done</button>
+    <button id="hudEditReset" class="hud-editbar__button hud-editbar__button--secondary" type="button">Reset to Default</button>
+    <label id="hudScaleLabel" class="hud-editbar__label" for="hudScaleRange">Scale</label>
+    <input id="hudScaleRange" class="hud-editbar__range" type="range" min="75" max="140" step="1" value="100" />
+  </div>
+</div>
+<div id="hudDragHandle" class="hud-draghandle is-hidden">Drag HUD</div>
+
+   <div id="hud" class="hud">
+        <div class="hud__surface">
+            <div class="hud__header">
+                <div class="hud__iconbox">
+                    <img src="assets/iconhud.svg" alt="HUD Icon" />
+                </div>
+
+                <div class="hud__heading">
+                    <h3 id="hudTitle" class="hud__title">
+                        METRO <span class="hud__title-accent">STATUS</span>
+                    </h3>
+                    <div id="hudStatus" class="hud__status" data-hud-item="status">
+                        Following instructions avoid receiving a penalty.
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud__divider"></div>
+
+            <div class="hud__stats">
+                <div class="hud-card" data-hud-item="next-station">
+                    <span id="hudNextStationLabel" class="hud-card__label">NEXT STATION</span>
+                    <strong id="hudNextStation" class="hud-card__value">Del Perro</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="stops">
+                    <span id="hudStopsLabel" class="hud-card__label">STOP COUNT</span>
+                    <strong id="hudStops" class="hud-card__value">6 | 12</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="distance">
+                    <span id="hudDistanceLabel" class="hud-card__label">DISTANCE</span>
+                    <strong id="hudDistance" class="hud-card__value">725 M.</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="cargo">
+                    <span id="hudCargoLabel" class="hud-card__label">PASSENGERS</span>
+                    <strong id="hudCargoCount" class="hud-card__value">18</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="speed">
+                    <span id="hudSpeedLimitLabel" class="hud-card__label">SPEED LIMIT</span>
+                    <strong id="hudSpeedLimit" class="hud-card__value">90 KM.</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="penalty">
+                    <span id="hudPenaltyLabel" class="hud-card__label">PENALTY FEE</span>
+                    <strong id="hudPenalty" class="hud-card__value">650$</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="live">
+                    <span id="hudLiveEarningsLabel" class="hud-card__label">TOTAL INCOME</span>
+                    <strong id="hudLiveEarnings" class="hud-card__value">1350$</strong>
+                </div>
+
+                <div class="hud-card" data-hud-item="xp">
+                    <span id="hudXpLabel" class="hud-card__label">TOTAL XP</span>
+                    <strong id="hudXp" class="hud-card__value">300</strong>
+                </div>
+            </div>
+
+            <div class="hud-timerwrap">
+                <div class="hud-timerbg" aria-hidden="true">00:00</div>
+                <div class="hud-timer" aria-hidden="true">00:45</div>
+            </div>
+
+            <div class="hud__footer">
+                <div class="hud-assistant" data-hud-item="assistant">
+                    <div class="hud-assistant__iconbox">
+                        <img src="assets/icohud.png" alt="Assistant Icon" />
+                    </div>
+
+                    <div class="hud-assistant__body">
+                        <div class="hud-assistant__row">
+                            <div class="hud-assistant__title">ASSISTANT</div>
+
+                            <div class="hud-assistant__signal">
+                                <div class="hud-assistant__loading">Loading...</div>
+                                <div class="hud-assistant__bars" aria-hidden="true">
+                                    <span class="hud-assistant__segment"><span class="hud-assistant__segment-fill"></span></span>
+                                    <span class="hud-assistant__segment"><span class="hud-assistant__segment-fill"></span></span>
+                                    <span class="hud-assistant__segment"><span class="hud-assistant__segment-fill"></span></span>
+                                    <span class="hud-assistant__segment"><span class="hud-assistant__segment-fill"></span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hud-assistant__desc">
+                            Passengers are boarding and leaving the metro.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hud-hold-wrap" data-hud-item="cancel">
+                    <span id="hudCancelLabel" class="is-hidden">CANCEL JOB</span>
+                    <strong id="hudCancel">HOLD [G] TO CANCEL THE JOB</strong>
+                    <div class="hud-cancelbar">
+                        <span id="hudCancelProgress"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="is-hidden">
+            <span id="hudRouteKmLabel"></span>
+            <strong id="hudKm"></strong>
+        </div>
+
+        <div class="is-hidden">
+            <span id="hudTotalLabel"></span>
+            <strong id="hudTotal"></strong>
+        </div>
+
+        <div id="hudCommandHint" class="is-hidden"></div>
+        <div id="hudEditCommandHint" class="is-hidden"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
